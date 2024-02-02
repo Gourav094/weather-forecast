@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import Body from "./components/Body";
+import Header from "./components/Header";
+import UserContext from "./components/UserContext";
 
 function App() {
+  const [search,setSearch] = useState('delhi')
+ 
+  const handleSubmit = (value) => {
+    setSearch(value)
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <UserContext.Provider value={{searchQuery:search,handleSubmit}}>
+    <div className="bg-neutral-800 h-screen">
+      <Header/>
+      <Body/>
     </div>
+    </UserContext.Provider>
   );
 }
 
