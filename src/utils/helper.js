@@ -1,15 +1,33 @@
-export function DayZone(timezoneOffsetSeconds) {
-    // Get the current time in UTC
-    const currentTimeUtc = new Date();
-    // Calculate the offset in milliseconds
-    const offsetMilliseconds = timezoneOffsetSeconds * 1000;
-    // Apply the offset to get the local time
-    const currentTimeLocal = new Date(currentTimeUtc.getTime() + offsetMilliseconds);
 
-    // Format the date and time
-    const options = { weekday: 'long', day: 'numeric', month: 'long' };
-    const formattedDateTime = currentTimeLocal.toLocaleString('en-US', options);
-    return formattedDateTime
+export function CurrentTime() {
+    const days = [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+    ];
+    const months = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
+    ];
+    const date = new Date();
+    const dayName = days[date.getDay()];
+    const monthName = months[date.getMonth()];
+    const dayOfMonth = date.getDate();
+    return `${dayName}, ${dayOfMonth} ${monthName}`;
 }
 
 
