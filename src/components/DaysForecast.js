@@ -14,7 +14,6 @@ const DaysForecast = ({ query }) => {
         const data = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${query}&units=metric&appid=${API_KEY}`)
         const jsonData = await data.json()
         const groupedData = groupByDay(jsonData?.list)
-        console.log(groupedData)
         setDayData(groupedData)
     }
 

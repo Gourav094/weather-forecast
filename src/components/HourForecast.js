@@ -17,10 +17,14 @@ const HourForecast = ({ query }) => {
 
     const groupByHour = (data) => {
         const currentDate = new Date();
-        const todayDate = currentDate.toISOString().split('T')[0];
+        // const todayDate = currentDate.toISOString().split('T')[0];
+        const year = currentDate.getFullYear();
+        const month = String(currentDate.getMonth() + 1).padStart(2, '0'); 
+        const day = String(currentDate.getDate()).padStart(2, '0');
+        const todayDate = `${year}-${month}-${day}`;
         return data.filter(item => item.dt_txt.startsWith(todayDate));
     }
-    if (!hourData)return
+    if (!hourData) return
     return (
         <div className='flex gap-6 flex-wrap'>
             {hourData.map((data) => (
