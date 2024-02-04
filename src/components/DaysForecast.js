@@ -39,10 +39,10 @@ const DaysForecast = ({ query }) => {
     return (
         <div className='py-4 px-6 rounded-3xl h-fit bg-neutral-700 bg-opacity-30'>
             {dayData.map((item) => (
-                <div className='flex items-center justify-between text-gray-400'>
+                <div className='flex items-center gap-2 justify-between text-gray-400'>
                     <div className='flex items-center text-white'>
                         <img className='w-14' src={IMG_CDN + `${item?.weather[0]?.icon}.png`} alt='icon' />
-                        <p>{Math.round(item?.main.temp)} °C</p>
+                        <p>{Math.round(item?.main.temp)}°C</p>
                     </div>
                     <p>{ConvertTIme(item?.dt_txt.split(" ")[0])}</p>
                     <p>{item?.dt_txt.split(" ")[0]}</p>

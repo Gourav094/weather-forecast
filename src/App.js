@@ -11,7 +11,7 @@ function App() {
   }
   return (
     <UserContext.Provider value={{searchQuery:search,handleSubmit}}>
-    <div className="bg-neutral-800 min-h-screen">
+    <div className="bg-neutral-800 min-w-fit min-h-screen">
       <Header/>
       <Body/>
     </div>

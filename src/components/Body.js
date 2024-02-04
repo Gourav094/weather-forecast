@@ -58,15 +58,15 @@ const Body = () => {
                             <div className='bg-neutral-800 py-4 px-8 my-6  rounded-xl md:w-1/2 tracking-wider flex items-center gap-4'>
                                 <div>
                                     <p className='text-gray-400'>Wind</p>
-                                    <div className='flex items-center gap-8 py-3'>
+                                    <div className='flex items-center gap-4 md:gap-8 py-3'>
                                         <i className="fa-solid fa-wind text-3xl"></i>
                                         <div>
                                             <p className='text-sm'>Speed</p>
-                                            <p className='text-2xl'>{currentData?.wind?.speed}km/h</p>
+                                            <p className='md:text-2xl'>{currentData?.wind?.speed}km/h</p>
                                         </div>
                                         <div>
                                             <p className='text-sm'>Deg</p>
-                                            <p className='text-2xl'>{currentData?.wind?.deg}°</p>
+                                            <p className='md:text-2xl'>{currentData?.wind?.deg}°</p>
                                         </div>
                                     </div>
                                 </div>
@@ -77,13 +77,13 @@ const Body = () => {
                                     <div className='flex items-center gap-4 py-3'>
                                         <i className="fa-solid fa-arrow-down text-2xl"></i>
                                         <div>
-                                            <p className='text-sm'>Min temp.</p>
-                                            <p className='text-xl'>{Math.round(currentData?.main?.temp_min)} °C</p>
+                                            <p className='text-sm'>Min</p>
+                                            <p className='md:text-xl'>{Math.round(currentData?.main?.temp_min)} °C</p>
                                         </div>
                                         <i className="fa-solid fa-arrow-up text-2xl"></i>
                                         <div>
-                                            <p className='text-sm'>Max temp.</p>
-                                            <p className='text-xl'>{Math.round(currentData?.main?.temp_max)} °C</p>
+                                            <p className='text-sm'>Max</p>
+                                            <p className='md:text-xl'>{Math.round(currentData?.main?.temp_max)} °C</p>
                                         </div>
                                     </div>
                                 </div>

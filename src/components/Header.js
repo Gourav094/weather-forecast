@@ -17,7 +17,7 @@ const Header = () => {
       <div className='flex items-center gap-2 font-semibold tracking-wide'>
         {/* <i className="fa-solid fa-cloud text-3xl"></i> */}
         <img className='w-10' src={logo} alt='logo' />
-        <p className='pt-1'>Wheather</p>
+        <p className='pt-1 hidden md:inline-block'>Wheather</p>
       </div>
       <form className='w-1/3' onSubmit={handleFormSubmit}>
         <input ref={query} className='w-full py-2 px-6 rounded-3xl bg-neutral-700 outline-none' type='text' placeholder='Enter City...' />
